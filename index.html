@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Happy Birthday Mohsen!!! :)</title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="style/style.css">
 </head>
@@ -46,12 +48,12 @@
       </p>
     </div>
     <div class="six">
-      <img src="img/koko.jpg" alt="" class="lydia-dp" data-node-name="imagePath">
+      <img src="img/koko.jpg" alt="" class="lydia-dp col-lg-6" data-node-name="imagePath">
       <img src="img/hat.svg" alt="" class="hat">
       <div class="wish">
         <!-- <h3 class="wish-hbd" data-node-name="wishHeading">Happy Birthday!</h3> -->
          <h2 class="wish-hbd" data-node-name="wishHeading">Happy Birthday!</h2>
-        <h5 data-node-name="wishText">May it will be the happiest birthday ever! ;)</h5>
+        <h5 data-node-name="wishText" class="d-lg-none d-xl-block">May it will be the happiest birthday ever! ;)</h5>
       </div>
     </div>
     <div class="seven">
@@ -143,6 +145,8 @@
 
 
   // Function to play audio
+
+  let show = false;
   function playAudio() {
     let audio = document.getElementById("myAudio");
     audio.play().catch(error => console.log("Autoplay blocked:", error));
