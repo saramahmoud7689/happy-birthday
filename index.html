@@ -135,9 +135,24 @@
 
 <script>
   // Play the audio after 5 seconds (5000ms)
-  setTimeout(() => {
-      document.getElementById("myAudio").play();
-  }, 33000);
+  // setTimeout(() => {
+  //   let audio = document.getElementById("myAudio");
+  //   audio.muted = false; // Unmute before playing
+  //   audio.play().catch(error => console.log("Autoplay blocked:", error));
+  // }, 33000);
+
+
+  // Function to play audio
+  function playAudio() {
+    let audio = document.getElementById("myAudio");
+    audio.play().catch(error => console.log("Autoplay blocked:", error));
+    
+    // Remove event listener after first interaction
+    document.removeEventListener("click", playAudio);
+  }
+
+  // Wait for user interaction
+  document.addEventListener("click", playAudio);
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
